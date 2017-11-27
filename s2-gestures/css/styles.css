@@ -1,0 +1,41 @@
+html {
+  font-size: 62.5%;
+  font-family: arial;
+}
+
+body {
+  margin: 0;
+  background-color: #FCFCFC;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+#bpf-container {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 10px;
+    outline: 1px solid grey;
+    background-color: #efefef;
+}
+
+#start {
+    position: absolute;
+    top: 170px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+#stop {
+    position: absolute;
+    top: 210px;
+    right: 10px;
+    width: 100px;
+    height: 30px;
+}
