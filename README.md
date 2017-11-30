@@ -14,7 +14,7 @@ All classes are on Friday afternoon (13h30-16h30)
 - 01 Dec 2017: Gestural Interaction
 - 08 Dec 2017: Motor Control and Learning 
 - 15 Dec 2017: Machine Learning for Gestural Interaction - Part 1
-- 22 Dec 2017: Gesture Recognition and Machine Learning - Part 2 
+- 22 Dec 2017: Machine Learning for Gestural Interaction - Part 2 
 - 12 Jan 2018: Project Session (1/2)
 - 19 Jan 2018: Project Session (2/2) 
 - 02 Fev 2018: Project Presentation
