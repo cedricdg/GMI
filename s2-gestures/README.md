@@ -8,7 +8,9 @@ cd GMI/s2-gestures
 npm install
 npm run watch
 ```
+
 This should run the server like (usually) http://127.0.0.0:3000 
+
 Open your browser go this IP
 
 ## Credits
