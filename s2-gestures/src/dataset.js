@@ -2,25 +2,35 @@
 class Dataset {
 
   constructor () {
-    this.gestures = [];
-    this.labels = [];
+    this.gesture = []
+    this.allGestures = [];
+    this.allLabels = [];
   }
 
-  add_gesture(data, label) {
-    this.gestures.push(data);
-    this.labels.push(label);
+  fillGesture(data) {
+    this.gesture.push(data);
   }
 
-  get_num_gestures() {
-    return this.gestures.length;
+  addGestureWithLabel(label) {
+    this.allGestures.push(this.gesture);
+    this.gesture = [];
+    this.allLabels.push(label);
   }
 
-  get_gestures() {
-    return this.gestures;
+  getNumGestures() {
+    return this.allGestures.length;
   }
 
-  get_labels() {
-    return this.labels;
+  getCurrentGesture() {
+    return this.gesture;
+  }
+
+  getGestures() {
+    return this.allGestures;
+  }
+
+  getLabels() {
+    return this.allLabels;
   }
 
 }

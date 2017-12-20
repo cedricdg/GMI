@@ -1,3 +1,8 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+      
 html {
   font-size: 62.5%;
   font-family: arial;
@@ -5,37 +10,29 @@ html {
 
 body {
   margin: 0;
-  background-color: #FCFCFC;
+  background-color: #F2F2F2;
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 0;
-  padding: 10px;
-  color: rgba(0, 0, 0, 0.9);
+#drawCan {
+  background-color: #ffffff;
 }
 
-#bpf-container {
-    position: absolute;
-    z-index: 2;
-    top: 10px;
-    right: 10px;
-    outline: 1px solid grey;
-    background-color: #efefef;
+#plotCan {
+  background-color: #ffffff;
 }
 
-#start {
-    position: absolute;
-    top: 170px;
-    right: 10px;
-    width: 100px;
-    height: 30px;
+.box {
+  float: left;
+  width: 500px;
+  margin: 10px;
+  background-color: #cecece;
 }
 
-#stop {
-    position: absolute;
-    top: 210px;
-    right: 10px;
-    width: 100px;
-    height: 30px;
+.boxtitle {
+  text-align: center;
+  font-size: 13px;
+}
+
+.button {
+  margin: 10px;
 }

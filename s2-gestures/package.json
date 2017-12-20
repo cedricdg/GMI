@@ -1,9 +1,9 @@
 {
-  "name": "es6-next-prototyping-client",
+  "name": "GMI-prototyping-client",
   "version": "1.0.1",
-  "description": "ESNext client prototyping boilerplate",
+  "description": "GMI template for prototyping gestural interaction (based on ESNext client prototyping boilerplate)",
   "main": "dist/main.js",
-  "author": "Benjamin Matuszewski",
+  "author": "Baptiste Caramiaux, Benjamin Matuszewski",
   "license": "ISC",
   "scripts": {
     "bundle": "./bin/runner --bundle",

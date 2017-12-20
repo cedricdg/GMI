@@ -1,3 +1,4 @@
+
 class Recognizer {
 
   constructor() {
@@ -8,8 +9,8 @@ class Recognizer {
   fit(dataset) {
     this.training_data = [];
     this.labels = []
-    const all_gestures = dataset.get_gestures();
-    const all_labels = dataset.get_labels();
+    const all_gestures = dataset.getAllGestures();
+    const all_labels = dataset.getAllLabels();
     for (let i = 0; i < all_gestures.length; i++) {
         this.training_data.push(all_gestures[i]);
         this.labels.push(all_labels[i]);
