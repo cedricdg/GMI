@@ -1,5 +1,4 @@
 // Drawing functions in canvas
-let drawing = false;
 let initDrawingPt = false;
 let prevMouseX = 0;
 let currMouseX = 0;
@@ -18,7 +17,6 @@ function drawGesture(canvas, res, e) {
     prevMouseY = currMouseY;
     currMouseX = e.clientX - canvas.offsetLeft;
     currMouseY = e.clientY - canvas.offsetTop;
-    drawing = true;
     initDrawingPt = true;
     if (initDrawingPt) {
         ctx.beginPath();
@@ -29,23 +27,18 @@ function drawGesture(canvas, res, e) {
         initDrawingPt = false;
     }
   }
-  if (res == 'up' || res == "out") {
-      drawing = false;
-  }
   if (res == 'move') {
-    if (drawing) {
-        prevMouseX = currMouseX;
-        prevMouseY = currMouseY;
-        currMouseX = e.clientX - canvas.offsetLeft;
-        currMouseY = e.clientY - canvas.offsetTop;
-        ctx.beginPath();
-        ctx.moveTo(prevMouseX, prevMouseY);
-        ctx.lineTo(currMouseX, currMouseY);
-        ctx.strokeStyle = color;
-        ctx.lineWidth = lineWidth; 
-        ctx.stroke();
-        ctx.closePath();
-    }
+    prevMouseX = currMouseX;
+    prevMouseY = currMouseY;
+    currMouseX = e.clientX - canvas.offsetLeft;
+    currMouseY = e.clientY - canvas.offsetTop;
+    ctx.beginPath();
+    ctx.moveTo(prevMouseX, prevMouseY);
+    ctx.lineTo(currMouseX, currMouseY);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth; 
+    ctx.stroke();
+    ctx.closePath();
   }
 }
 
@@ -99,4 +92,5 @@ function addBoxToBody(width, height, name, boxtitle) {
   div.appendChild(titleDiv);
 }
 
-export { addBoxToBody, drawGesture, addGestureThumbnail, getMouseXYinCanvas};
+
+export { addBoxToBody, drawGesture, addGestureThumbnail, getMouseXYinCanvas };
