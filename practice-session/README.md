@@ -4,7 +4,7 @@ README
 
 ```sh
 git clone --depth=1 https://github.com/bcaramiaux/GMI
-cd GMI/s2-gestures
+cd GMI/practice-session
 npm install
 npm run watch
 ```
