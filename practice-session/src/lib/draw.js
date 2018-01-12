@@ -1,7 +1,7 @@
 // Drawing functions in canvas
 let initDrawingPt = false;
 let prevMouseX = 0;
-let currMouseX = 0;
+let currMouseX = 0; 
 let prevMouseY = 0;
 let currMouseY = 0;
 let lineWidth = 3;
@@ -36,7 +36,7 @@ function drawGesture(canvas, res, e) {
     ctx.moveTo(prevMouseX, prevMouseY);
     ctx.lineTo(currMouseX, currMouseY);
     ctx.strokeStyle = color;
-    ctx.lineWidth = lineWidth; 
+    ctx.lineWidth = lineWidth;
     ctx.stroke();
     ctx.closePath();
   }
@@ -52,7 +52,7 @@ function addGestureThumbnail(canvas, gesture_id) {
     // get context to fill with bkg color and image
     let ctx = thumbCnvs.getContext('2d');
     ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, thumbCnvs.width, thumbCnvs.height); 
+    ctx.fillRect(0, 0, thumbCnvs.width, thumbCnvs.height);
     ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, thumbCnvs.width, thumbCnvs.height);
     // add to the body document
     var body = document.getElementsByTagName("body")[0];
@@ -82,7 +82,7 @@ function addBoxToBody(width, height, name, boxtitle) {
   canvas.id = name;
   let ctx = canvas.getContext('2d');
   ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, canvas.width, canvas.height); 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
   let div = document.getElementById(iDiv.id);
   div.appendChild(canvas);
   // create div for title

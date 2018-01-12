@@ -50,7 +50,7 @@ function distance(vector1, vector2) {
 }
 
 function resample(data_, n)
-{   
+{
     let data = data_;
     let I = pathLength(data) / (n - 1); // interval length
     let D = 0.0;
@@ -95,20 +95,21 @@ function rotate(points) // rotates points around centroid
 
 function scale(points) // non-uniform scale; assumes 2D gestures (i.e., no lines)
 {
-    let size = 500;
+    let size = 1;
     let bBox = boundingBox(points);
     let newpoints = [];
     for (let i = 0; i < points.length; i++) {
         let qx = points[i][0] * (size / bBox[0]);
         let qy = points[i][1] * (size / bBox[1]);
         newpoints.push([qx, qy]);
+        console.log([qx, qy]);
     }
     return newpoints;
 }
 
 function translateToOrigin(points) // translates points' centroid
 {
-    const orig = [0, 0];
+    const orig = [0.5, 0.5];
     const c = centroid(points);
     let newpoints = [];
     for (let i = 0; i < points.length; i++) {

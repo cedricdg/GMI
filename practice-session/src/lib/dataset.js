@@ -1,6 +1,6 @@
 /**
  * Dataset Class
- */
+ */ 
 
 class Dataset {
 
@@ -66,7 +66,7 @@ class Dataset {
       // get context to fill with bkg color and image
       let ctx = thumbCnvs.getContext('2d');
       ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, thumbCnvs.width, thumbCnvs.height); 
+      ctx.fillRect(0, 0, thumbCnvs.width, thumbCnvs.height);
       for (let n = 0; n < gesture_.length; n++) {
         if (n == 0)  {
           ctx.beginPath();
@@ -85,7 +85,7 @@ class Dataset {
           ctx.moveTo(prevX, prevY);
           ctx.lineTo(curX, curY);
           ctx.strokeStyle = "orange";
-          ctx.lineWidth = 2; 
+          ctx.lineWidth = 2;
           ctx.stroke();
           ctx.closePath();
         }

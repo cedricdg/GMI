@@ -1,5 +1,5 @@
 import * as loaders from 'waves-loaders';
-
+ 
 // safari compatible
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
@@ -35,7 +35,7 @@ function loadSoundIntoBuffers(buffers, callback) {
   const loader = new loaders.AudioBufferLoader();
   loader
     .load(buffers) // return a Promise
-    .then(callback); 
+    .then(callback);
 }
 
 function loadSounds(buffers) {
@@ -61,5 +61,3 @@ function stopAllSounds() {
 
 
 export { loadSounds, playSound, stopSound, stopAllSounds};
-
-
