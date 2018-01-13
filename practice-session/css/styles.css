@@ -2,13 +2,14 @@ html, body {
   width: 100%;
   height: 100%;
 }
-      
+
 html {
   font-size: 62.5%;
   font-family: arial;
 }
 
 body {
+  overflow: hidden;
   margin: 0;
   background-color: #F2F2F2;
 }
@@ -23,7 +24,7 @@ body {
 
 .box {
   float: left;
-  width: 500px;
+  width: 300px;
   margin: 10px;
   background-color: #cecece;
 }
