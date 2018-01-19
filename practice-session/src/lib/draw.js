@@ -1,22 +1,22 @@
 // Drawing functions in canvas
 let initDrawingPt = false;
 let prevMouseX = 0;
-let currMouseX = 0; 
+let currMouseX = 0;
 let prevMouseY = 0;
 let currMouseY = 0;
 let lineWidth = 3;
 let color = "orange";
 
 
-function drawGesture(canvas, res, e) {
+function drawGesture(canvas, res, coordinates) {
   let ctx = canvas.getContext("2d");
   if (res == 'down') {
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     prevMouseX = currMouseX;
     prevMouseY = currMouseY;
-    currMouseX = e.clientX - canvas.offsetLeft;
-    currMouseY = e.clientY - canvas.offsetTop;
+    currMouseX = coordinates[0] * canvas.width;
+    currMouseY = coordinates[1] * canvas.height;
     initDrawingPt = true;
     if (initDrawingPt) {
         ctx.beginPath();
@@ -30,8 +30,8 @@ function drawGesture(canvas, res, e) {
   if (res == 'move') {
     prevMouseX = currMouseX;
     prevMouseY = currMouseY;
-    currMouseX = e.clientX - canvas.offsetLeft;
-    currMouseY = e.clientY - canvas.offsetTop;
+    currMouseX = coordinates[0] * canvas.width;
+    currMouseY = coordinates[1] * canvas.height;
     ctx.beginPath();
     ctx.moveTo(prevMouseX, prevMouseY);
     ctx.lineTo(currMouseX, currMouseY);

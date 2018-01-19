@@ -10,9 +10,15 @@ let gestureID = 1;
 let trainingMode = true;
 
 const $drawing = document.querySelector('#drawCan');
+const $copyDialog = document.querySelector('#copyDialog');
+const $copyModal = document.querySelector('#copyModal');
+const $pasteModal = document.querySelector('#pasteModal');
+const $pasteModalPreview = document.querySelector('#pasteModalPreview');
+const $selectableText = document.querySelector('#selectableText');
 
 let dataset = new Dataset();
 let myRecognizer = new Recognizer();
+
 if (typeof window.orientation !== 'undefined') {
 
   // start when mouse is down
@@ -34,6 +40,11 @@ if (typeof window.orientation !== 'undefined') {
       mouseUp(e);
   });
 
+  $selectableText.addEventListener('touchend', function(e){
+    console.log("Touched text");
+    console.log(e);
+  })
+
 } else {
   // start when mouse is down
   $drawing.addEventListener('mousedown', function(e) {
@@ -52,12 +63,11 @@ if (typeof window.orientation !== 'undefined') {
      	console.log("mouseup");
       mouseUp(e);
   });
-
 }
 
 const mouseDown = function(e) {
-   	draw.drawGesture($drawing, 'down', e);
-   	const coordinates = draw.getMouseXYinCanvas($drawing, e);
+    const coordinates = draw.getMouseXYinCanvas($drawing, e);
+   	draw.drawGesture($drawing, 'down', coordinates);
    	currentGesture.push(coordinates);
     console.log(coordinates);
    	letsDraw = true;
@@ -65,8 +75,8 @@ const mouseDown = function(e) {
 
 const mouseMove = function(e) {
 	if (letsDraw){
-	   	draw.drawGesture($drawing, 'move', e);
-	   	const coordinates = draw.getMouseXYinCanvas($drawing, e);
+      const coordinates = draw.getMouseXYinCanvas($drawing, e);
+	   	draw.drawGesture($drawing, 'move', coordinates);
 	   	currentGesture.push(coordinates);
    		//console.log(coordinates);
 	   }
@@ -86,6 +96,18 @@ const mouseUp = function(e) {
 		} else{
 			const predictedLabel = myRecognizer.predict(currentGesture);
 			console.log(predictedLabel);
+
+      if(predictedLabel === 1)
+      {
+        console.log($copyModal);
+        $copyModal.style.display = "none";
+        $copyModal.style.display = "block";
+        copyDialog.show();
+      } else if(predictedLabel === 2){
+
+      } else {
+
+      }
 		}
 
 	   	currentGesture = [];

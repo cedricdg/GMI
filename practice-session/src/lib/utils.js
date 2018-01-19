@@ -95,7 +95,7 @@ function rotate(points) // rotates points around centroid
 
 function scale(points) // non-uniform scale; assumes 2D gestures (i.e., no lines)
 {
-    let size = 1;
+    let size = 0.5;
     let bBox = boundingBox(points);
     let newpoints = [];
     for (let i = 0; i < points.length; i++) {
