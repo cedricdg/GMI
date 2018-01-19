@@ -13,28 +13,47 @@ const $drawing = document.querySelector('#drawCan');
 
 let dataset = new Dataset();
 let myRecognizer = new Recognizer();
+if (typeof window.orientation !== 'undefined') {
 
-// start when mouse is down
-$drawing.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-   	console.log("touchstart");
-    mouseDown(e);
-});
-// start when mouse is down
-$drawing.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-   	console.log("touchmove");
-    mouseMove(e);
-});
-// start when mouse is down
-$drawing.addEventListener('touchend', function(e) {
-    e.preventDefault();
-   	console.log("touchend");
-    mouseUp(e);
-});
+  // start when mouse is down
+  $drawing.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+     	console.log("touchstart");
+      mouseDown(e);
+  });
+  // start when mouse is down
+  $drawing.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+     	console.log("touchmove");
+      mouseMove(e);
+  });
+  // start when mouse is down
+  $drawing.addEventListener('touchend', function(e) {
+      e.preventDefault();
+     	console.log("touchend");
+      mouseUp(e);
+  });
 
-// start when mouse is down
-$drawing.addEventListener('mousedown', mouseDown);
+} else {
+  // start when mouse is down
+  $drawing.addEventListener('mousedown', function(e) {
+     	console.log("mousedown");
+      mouseDown(e);
+  });
+
+  // start when mouse is down
+  $drawing.addEventListener('mousemove', function(e) {
+     	console.log("mousemove");
+      mouseMove(e);
+  });
+
+  // stop when mouse is up
+  $drawing.addEventListener('mouseup', function(e) {
+     	console.log("mouseup");
+      mouseUp(e);
+  });
+
+}
 
 const mouseDown = function(e) {
    	draw.drawGesture($drawing, 'down', e);
@@ -44,9 +63,6 @@ const mouseDown = function(e) {
    	letsDraw = true;
 };
 
-// start when mouse is down
-$drawing.addEventListener('mousemove', mouseMove);
-
 const mouseMove = function(e) {
 	if (letsDraw){
 	   	draw.drawGesture($drawing, 'move', e);
@@ -54,14 +70,9 @@ const mouseMove = function(e) {
 	   	currentGesture.push(coordinates);
    		//console.log(coordinates);
 	   }
-
 };
 
-// stop when mouse is up
-$drawing.addEventListener('mouseup', mouseUp);
-
 const mouseUp = function(e) {
-
    	letsDraw = false;
 
     currentGesture = utils.scale(currentGesture);
