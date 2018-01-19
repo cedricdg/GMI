@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>GMI</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>GMI</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-  <body>
-    <!-- Copy Modal -->
-    <div id="copyModal" class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2>Mark text to copy</h2>
+<body>
+  <!-- Copy Modal -->
+  <div id="copyModal" class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Mark text to copy</h2>
+    </div>
+  </div>
+  <div class="box">
+    <canvas id="drawCan">no canvas, really?</canvas>
+    <dialog id="copyDialog" class="alert">
+      <div>
+        Shit copied
       </div>
-    </div>
-    <div class="box">
-      <canvas id="drawCan" width="300" height="300">no canvas, really?</canvas>
-      <dialog id="copyDialog" class="alert">
-        <div>
-          Shit pasted
-        </div>
-      </dialog>
-      <div class="boxtitle">Drawing Area</div>
-    </div>
+    </dialog>
+    <div class="boxtitle">Drawing Area</div>
+  </div>
 
-    <button id="trainingButton">Training</button>
-    <button id="testingButton">Testing</button>
-    <h3>Space Cookies!</h3>
-    <p id="selectableText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, inventore!</p>
+  <button id="trainingButton">Training</button>
+  <button id="testingButton">Testing</button>
 
+  <div id="dataset-div"></div>
+  <script src="./bundle.js"></script>
 
-    <div id="dataset-div"></div>
+  <div id="selectableText">
+    <h3>Cookies Ingredients:</h3>
+    <ul>
+      <li>1 ¾ cups of flour</li>
+      <li>1 cup of non-salted butter</li>
+      <li>1 cup of granulated sugar</li>
+      <li>¾ cup of milk</li>
+      <li>2 eggs</li>
+      <li>1 ¾ teaspoons of baking powder</li>
+      <li>½ teaspoon of salt</li>
+      <li>Any other ingredients you want to improve the cake with, such as cocoa powder, vanilla extract, dried fruit, icing/frosting, buttercream, chocolate chips, or anything else – your imagination is your only limit.</li>
+    </ul>
+  </div>
 
-    <script src="./bundle.js"></script>
-  </body>
+  <form>
+    Message: <input type="text" name="FirstName" value=""><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
 
 </html>

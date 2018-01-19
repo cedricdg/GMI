@@ -27,12 +27,14 @@ if (typeof window.orientation !== 'undefined') {
      	console.log("touchstart");
       mouseDown(e);
   });
+
   // start when mouse is down
   $drawing.addEventListener('touchmove', function(e) {
       e.preventDefault();
      	console.log("touchmove");
       mouseMove(e);
   });
+  
   // start when mouse is down
   $drawing.addEventListener('touchend', function(e) {
       e.preventDefault();
@@ -40,7 +42,7 @@ if (typeof window.orientation !== 'undefined') {
       mouseUp(e);
   });
 
-  $selectableText.addEventListener('touchend', function(e){
+  document.addEventListener('touchend', function(e){
     console.log("Touched text");
     console.log(e);
   })
@@ -63,6 +65,13 @@ if (typeof window.orientation !== 'undefined') {
      	console.log("mouseup");
       mouseUp(e);
   });
+
+  document.addEventListener('mouseup', function(e){
+    console.log("Touched text");
+    console.log(e);
+    let selectedText = window.getSelection();
+    console.log(selectedText);
+  })
 }
 
 const mouseDown = function(e) {
@@ -87,6 +96,7 @@ const mouseUp = function(e) {
 
     currentGesture = utils.scale(currentGesture);
     currentGesture = utils.translateToOrigin(currentGesture);
+    currentGesture = utils.resample(currentGesture, 30);
     // scale
 
     if(trainingMode){
@@ -102,7 +112,6 @@ const mouseUp = function(e) {
         console.log($copyModal);
         $copyModal.style.display = "none";
         $copyModal.style.display = "block";
-        copyDialog.show();
       } else if(predictedLabel === 2){
 
       } else {
@@ -113,6 +122,12 @@ const mouseUp = function(e) {
 	   	currentGesture = [];
 };
 
+document.addEventListener("selectionchange", function() {
+  console.log('Selection changed');
+  let selectedText = window.getSelection();
+  console.log("text: " + selectedText);
+});
+
 const $trainingButton = document.querySelector('#trainingButton');
 $trainingButton.addEventListener('click', function(e) {
 	trainingMode = true;
@@ -122,5 +137,4 @@ const $testingButton = document.querySelector('#testingButton');
 $testingButton.addEventListener('click', function(e) {
 	myRecognizer.fit(dataset);
 	trainingMode = false;
-
 });

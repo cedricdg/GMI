@@ -38,7 +38,6 @@ class Recognizer {
         minIndex = i;
       }
 
-
     }
     return this.trainingLabels[minIndex];
 
