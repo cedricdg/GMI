@@ -102,7 +102,6 @@ function scale(points) // non-uniform scale; assumes 2D gestures (i.e., no lines
         let qx = points[i][0] * (size / bBox[0]);
         let qy = points[i][1] * (size / bBox[1]);
         newpoints.push([qx, qy]);
-        console.log([qx, qy]);
     }
     return newpoints;
 }

@@ -8,50 +8,61 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <title>GMI</title>
   <link rel="stylesheet" href="./css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
 </head>
 
 <body>
+  <div id="leftSideBar" class="sideLeft">
+  </div>
+  <div id="rightSideBar" class="sideRight">
+  </div>
   <!-- Copy Modal -->
   <div id="copyModal" class="modal-content">
     <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Mark text to copy</h2>
+      <h3 id="copyModalText"></h3>
     </div>
   </div>
+  <div>
+    <canvas id="drawCan" height="500" width="500">no canvas, really?</canvas>
+  </div>
   <div class="box">
-    <canvas id="drawCan">no canvas, really?</canvas>
-    <dialog id="copyDialog" class="alert">
-      <div>
-        Shit copied
-      </div>
-    </dialog>
-    <div class="boxtitle">Drawing Area</div>
+    <div id="boxHeader" class="boxtitle">TRAINING MODE</div>
+    <button id="trainingButton" class="trainingsButton">Activate Testing</button>
   </div>
 
-  <button id="trainingButton">Training</button>
-  <button id="testingButton">Testing</button>
+
+    <div class="textArea" id="selectableText">
+      <h3>Supersmart Quotes:</h3>
+
+      <ul class="bb-ul">
+        <li class="bb-li">'I had some beautiful pictures taken in which I had a big smile on my face. I looked happy, I looked content, I looked like a very nice person, which in theory I am.'</li>
+        <li class="bb-li">'The beauty of me is that I’m very rich.'</li>
+        <li class="bb-li">'I think I am actually humble. I think I’m much more humble than you would understand.'</li>
+        <li class="bb-li">'I’m intelligent. Some people would say I’m very, very, very intelligent.'</li>
+        <li class="bb-li">'I have never seen a thin person drinking Diet Coke.'</li>
+        <li class="bb-li">'Sorry losers and haters, but my I.Q. is one of the highest – and you all know it! Please don’t feel so stupid or insecure, it’s not your fault.'</li>
+        <li class="bb-li">'Being nice to Rocket Man hasn't worked in 25 years, why would it work now? Clinton failed, Bush failed, and Obama failed. I won't fail.’ (Kim Jong-un came to power in 2011).</li>
+        <li class="bb-li">'My father gave me a small loan of a million dollars.'</li>
+        <li class="bb-li">'While Bette Midler is an extremely unattractive woman, I refuse to say that because I always insist on being politically correct.'</li>
+        <li class="bb-li">(On exporting goods to China) 'Listen, you m*****f***ers, we're going to tax you 25 per cent!'</li>
+        <li class="bb-li">(To Cher) 'I don’t wear a 'rug'— it’s mine. And I promise not to talk about your massive plastic surgeries that didn’t work.'</li>
+        <li class="bb-li">(On Puerto Rico) 'This is an island surrounded by water, big water, ocean water.'</li>
+        <li class="bb-li">'People love me. And you know what? I've been very successful. Everybody loves me.'</li>
+      </ul>
+        <div width="100%" display="flex">
+        <div  display="inline-block" width="50%" float="left">
+          <h3>Agree:</h3>
+          <textarea id="inputAgree" class="textInputField" rows="6"> </textarea>
+        </div>
+        <div display="inline-block" width="50%" float="right">
+          <h3>Disagree:</h3>
+          <textarea id="inputDisagree" class="textInputField" rows="6"> </textarea>
+        </div>
+        </div>
+    </div>
 
   <div id="dataset-div"></div>
   <script src="./bundle.js"></script>
-
-  <div id="selectableText">
-    <h3>Cookies Ingredients:</h3>
-    <ul>
-      <li>1 ¾ cups of flour</li>
-      <li>1 cup of non-salted butter</li>
-      <li>1 cup of granulated sugar</li>
-      <li>¾ cup of milk</li>
-      <li>2 eggs</li>
-      <li>1 ¾ teaspoons of baking powder</li>
-      <li>½ teaspoon of salt</li>
-      <li>Any other ingredients you want to improve the cake with, such as cocoa powder, vanilla extract, dried fruit, icing/frosting, buttercream, chocolate chips, or anything else – your imagination is your only limit.</li>
-    </ul>
-  </div>
-
-  <form>
-    Message: <input type="text" name="FirstName" value=""><br>
-    <input type="submit" value="Submit">
-  </form>
 </body>
 
 </html>
