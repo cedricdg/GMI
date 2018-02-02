@@ -188,9 +188,11 @@ const mouseDownSideBar = function(e){
 };
 
 const clickOnInput = function(inputField){
-  inputField.innerText = clipboard;
-  clipboard = "";
-  changeMode(MODE_DEFAULT);
+  if(currentMode == MODE_PASTE){
+    inputField.innerText = clipboard;
+    clipboard = "";
+    changeMode(MODE_DEFAULT);
+  }
 }
 
 const mouseDown = function(e) {
@@ -227,9 +229,9 @@ const mouseUp = function(e) {
     const predictedLabel = myRecognizer.predict(currentGesture);
     console.log(predictedLabel);
 
-    if (predictedLabel === 1) {
+    if (predictedLabel === 1 || predictedLabel === 3) {
       changeMode(MODE_COPY);
-    } else if (predictedLabel === 2) {
+    } else if (predictedLabel === 2 || predictedLabel === 4) {
       if(clipboard !== ""){
         changeMode(MODE_PASTE);
       } else {
